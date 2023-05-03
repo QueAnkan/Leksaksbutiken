@@ -1,0 +1,37 @@
+:root{
+	--headerBackground: #6FF0D1;
+	--headerText: #7A5312;
+	--background: #EAF9F5;
+	--button: #A35B80;
+	--buttonHover: #F07AB6;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+main{
+	background-color: var(--background);
+	max-width: 1024px;
+
+}
+
+button{
+	background-color: var(--button);
+	padding: 0.5em 1em;
+}
+
+
+
+/* tablet */
+@media (min-width:481px) and (max-width:768px){}
+
+
+/* laptop, small screens */
+@media (min-width:769px) and (max-width:1024px){}
+
+
+/* desktop, larger screens */
+@media (min-width:1025px){}
