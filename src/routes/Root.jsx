@@ -1,13 +1,16 @@
-import Header from "./header/Header"
-import Footer from "./foooter/Footer"
+import Header from "../componenets/header/Header"
+import Footer from "../componenets/foooter/Footer"
+import { Outlet } from "react-router-dom"
 
 const Root = () => {
 
 	return (
 
-		<div>
+		<div className = 'container'>
 			<Header/>
-			<main></main>
+			<main>
+				<Outlet/>
+			</main>
 			<Footer/>
 		</div>
 	)

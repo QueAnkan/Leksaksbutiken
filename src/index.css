@@ -1,21 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+
 :root{
 	--headerBackground: #6FF0D1;
 	--headerText: #7A5312;
 	--background: #EAF9F5;
 	--button: #A35B80;
 	--buttonHover: #F07AB6;
+	--cardBackground: #F0CB8D;
 }
 
 *{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: 'PT Serif', serif;
+}
+
+body{
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	height: 100vh;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	height: 100vh;
+
 }
 
 main{
-	background-color: var(--background);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-grow: 1;
 	max-width: 1024px;
-
+	margin: 0 auto;
+	width: 90%;
 }
 
 button{
@@ -23,15 +46,27 @@ button{
 	padding: 0.5em 1em;
 }
 
+button :hover{
+	cursor: pointer;
+	background-color: var(--buttonHover);
+}
+
 
 
 /* tablet */
-@media (min-width:481px) and (max-width:768px){}
+@media (min-width:481px) and (max-width:768px){
+	
+
+}
 
 
 /* laptop, small screens */
-@media (min-width:769px) and (max-width:1024px){}
+@media (min-width:769px) and (max-width:1024px){
+}
 
 
 /* desktop, larger screens */
-@media (min-width:1025px){}
+@media (min-width:1025px){
+	
+
+}
