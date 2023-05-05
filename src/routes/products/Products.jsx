@@ -1,6 +1,7 @@
 import {useLoaderData} from 'react-router-dom'
 import { data } from '../../data/toys'
 import ViewProducts from '../../componenets/ViewProducts'
+import './Products.css'
 
 export const loader = () => data
 
