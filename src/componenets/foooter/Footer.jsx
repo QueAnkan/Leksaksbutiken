@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import './Footer.css'
 
 
@@ -25,7 +26,7 @@ const Footer = () => {
 			</section>
 			{/* ev andra ikoner in här */}
   			<div> företagsikoner </div>
-			<div>Admin+ikon</div>
+			<NavLink to='login' >  Admin+ikon</NavLink>
 		</footer>
 	)
 }

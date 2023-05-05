@@ -1,0 +1,9 @@
+
+
+.products-container{
+	display: grid;
+	grid-template-columns: 3;
+	grid-template-rows: auto;
+	width: 100%;
+}
+
