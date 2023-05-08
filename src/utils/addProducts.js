@@ -1,5 +1,5 @@
 import { data } from "../data/toys";
-import {url, shopId} from './constants.js'
+import {url ,shopId} from './constants.js'
 
 async function addProduct(oneProduct) {
 	console.log('adding product');
@@ -19,7 +19,7 @@ async function addProduct(oneProduct) {
 	return false
 }
 
-async function addAllProducts() {
+/* async function addAllProducts() {
 	let products = data
 
 	products.forEach(product => {
@@ -27,6 +27,8 @@ async function addAllProducts() {
 	})
 }
 
-addAllProducts()
+addAllProducts() */
+
+export default addProduct
 
 

@@ -2,9 +2,14 @@ import { createHashRouter } from "react-router-dom";
 import Root from "./routes/Root";
 import Home from "./routes/home/Home";
 import Products, {loader as productsLoader} from "./routes/products/Products";
-import Search, {loader as searchLoader} from "./routes/Search";
+import ProductDetails from "./routes/products/ProductDetails";
+import Search, {loader as searchLoader} from "./routes/search/Search";
 import Cart from "./routes/cart/Cart";
-import LogIn from "./routes/LogIn";
+import LogIn from "./routes/admin/LogIn";
+import AdminStart from "./routes/admin/AdminStart";
+import AdminProducts from "./routes/admin/AdminProducts";
+import AdminHandleUsers from "./routes/admin/AdminHandleUsers";
+import ErrorPage from "./routes/ErrorPage";
 
 
 const router = createHashRouter ([
@@ -16,13 +21,20 @@ const router = createHashRouter ([
 		 children:[
 
 			{
-				path: '',
+				path: '/',
 				element: <Home/> ,
 			},
 
 			{
 				path: 'products' ,
 				element: <Products/>,
+				loader: productsLoader,
+
+			},
+
+			{
+				path:'/products/:id',
+				element:<ProductDetails/>,
 				loader: productsLoader,
 			},
 
@@ -42,7 +54,25 @@ const router = createHashRouter ([
 				element: <LogIn/>,
 			},
 
+			{
+				path: 'admin-start',
+				element: <AdminStart/>,
+			},
+
+			{
+				path: 'admin-products',
+				element: <AdminProducts/>,
+			},
+			{
+				path: 'admin-handle-users',
+				element: <AdminHandleUsers/>,
+			},
+
+
 		 ],
+		 
+			errorElement: <ErrorPage/>
+		 
 
 }
 

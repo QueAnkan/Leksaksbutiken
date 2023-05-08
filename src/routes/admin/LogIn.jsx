@@ -1,11 +1,12 @@
-
+import { NavLink } from 'react-router-dom'
+import './Admin.css'
 
 const LogIn = () => {
 
 	return(
 
-		<div>
-			<h1>Logga in</h1>
+		<div className="login-container">
+			<h2>Logga in</h2>
 			<form action="">
 				<label htmlFor="username">Användarnamn</label>
 				<input type="text" 
@@ -19,7 +20,7 @@ const LogIn = () => {
 				// onChange={}
 				required/>
 				<button type='submit' 
-				// onClick={}
+				// onClick={ () =>  }
 				> Logga in</button>
 			</form>
 		</div>

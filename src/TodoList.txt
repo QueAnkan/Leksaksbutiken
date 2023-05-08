@@ -1,0 +1,37 @@
+PRODUCTS.CSS
+
+
+bilderna?
+
+PRODUCTS 
+
+
+SEARCH 
+sortera produkter
+
+HEADER
+Marginaler mellan ikoner och länkar , justera så det syns vad som hör ihop med vad
+
+
+LOGIN
+fixa css
+validering
+onChange
+onClick
+
+
+VIEWPRODUCTS 
+meddelande om tillagd i cart
+lägg ihop om fler av samma och:
+Om flera i korgen går bara en ta bort, annars läggs andra till???
+
+
+
+CART 
+lägg till button med mddelande om att gå vidare i köpet
+
+
+// VIKTIGT!!!! //
+Lägga till admin-sidorna
+API
+

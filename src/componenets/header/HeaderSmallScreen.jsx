@@ -1,17 +1,21 @@
 import { NavLink } from "react-router-dom"
+import {FiSearch} from "react-icons/fi"
+import {FiShoppingCart} from "react-icons/fi"
+import {FaBars} from "react-icons/fa"
+
 
 const HeaderSmallScreen = () => {
 
 	return (
 		
 	<header className="header-small">
-		<h1>Lek och bad</h1>
+
+		<NavLink to=''> <h1>Lek och bad </h1> </NavLink>
 		<nav>
-			
-			ikonsök ikonkund ikonmeny
-				{/* <NavLink></NavLink>
-				<NavLink></NavLink> */}
+			<NavLink to='search' > <FiSearch className="ikon"/></NavLink>
+			<NavLink to='cart'><FiShoppingCart className="ikon"/></NavLink>
 				{/* <MainMenu/> */}
+				<FaBars/>
 		</nav>
 	</header>
 	)

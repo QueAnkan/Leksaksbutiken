@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom"
 import {FiSearch} from "react-icons/fi"
+import {FiShoppingCart} from "react-icons/fi"
 
 
 const HeaderLargeScreen = () => {
@@ -10,9 +11,12 @@ const HeaderLargeScreen = () => {
 			 
 			<NavLink to=''> <h1>Lek och bad </h1> </NavLink> 
 			<nav>
-					<NavLink to='products'>Vårt sortiment</NavLink>
-					<NavLink to='search' > <FiSearch className="ikon"/>  Sök produkt</NavLink>
-					<NavLink to='cart'>Kundkorg</NavLink>
+				
+					<NavLink to='products'> Vårt sortiment</NavLink>
+					<NavLink to='search' className='ikon' > <FiSearch className="ikon"/> </NavLink>
+					<NavLink to='search'  >  Sök produkt</NavLink>
+					<NavLink to='cart' className='ikon'> <FiShoppingCart className="ikon"/></NavLink>
+					<NavLink to='cart'>Varukorg</NavLink>
 			</nav>
 		</header>
 	)
@@ -22,4 +26,3 @@ export default HeaderLargeScreen
 
 
 
-{/* <HiMagnifyingGlass/> */}

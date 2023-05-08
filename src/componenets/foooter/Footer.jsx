@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import './Footer.css'
-
+import {FiLogIn} from 'react-icons/fi'
 
 const Footer = () => {
 
@@ -26,7 +26,7 @@ const Footer = () => {
 			</section>
 			{/* ev andra ikoner in här */}
   			<div> företagsikoner </div>
-			<NavLink to='login' >  Admin+ikon</NavLink>
+			<NavLink to='login' >  Admin <FiLogIn/> </NavLink>
 		</footer>
 	)
 }

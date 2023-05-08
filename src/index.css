@@ -43,12 +43,14 @@ main{
 
 button{
 	padding: 0.5em 1em;
+	border-radius: 1em;
+	border-color:var(--background);
 	color: var(--background);
 	background-color: var(--button);
 	
 }
 
-button :hover{
+button:hover{
 	cursor: pointer;
 	background-color: var(--buttonHover);
 }

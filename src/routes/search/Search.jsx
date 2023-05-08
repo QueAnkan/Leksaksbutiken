@@ -1,7 +1,8 @@
 import { useState } from "react"
 import { useLoaderData } from "react-router-dom"
-import { data } from '../data/toys'
-import ViewProducts from "../componenets/ViewProducts"
+import { data } from '../../data/toys'
+import ViewProducts from "../../componenets/ViewProducts"
+import './search.css'
 
 export const loader = () => data
 
@@ -20,22 +21,25 @@ const Search = () => {
 	})
 
 	return (
-		<div>
+		<div className="search-container" >
 			<h2>Sök efter produkt</h2>
-			<label htmlFor=""></label>
-			<input type="text"
-			value= {searchString}
-			onChange={handleOnChange} />
-			<p>Sökresultat</p>
+			<div className="search-input">
+				<label htmlFor="search"> Skriv in ditt sökord här</label>
+				<input id='search' type="text"
+				value= {searchString}
+				onChange={handleOnChange} />
+			</div>
 			
+			<div className="products-container">
 				{searchString===''? 
 				null : 
 				<ul>
 				{matches.map(product => (
-					<ViewProducts key={product.name}  product = {product}/>
+					<ViewProducts key={product.id}  product = {product} view='search'/>
 				))}
 				</ul>
 				}
+				</div>
 		</div>
 	)
 }
