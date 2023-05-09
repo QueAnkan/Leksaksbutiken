@@ -7,6 +7,7 @@ import './Cart.css'
 const Cart = () => {
 
 	const [cart] = useRecoilState(cartAtom)
+	
 
 
 	return(
@@ -21,6 +22,7 @@ const Cart = () => {
 			<p>Totalt belopp:</p>
 			<p>0 :-</p>
 			</div>
+			<button type="button"> Till betalning</button>
 		</div>
 	)
 

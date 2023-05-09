@@ -37,7 +37,7 @@ main{
 	align-items: center;
 	flex-grow: 1;
 	max-width: 1024px;
-	margin: 0 auto;
+	margin: 5em auto 0 auto;
 	width: 90%;
 }
 

@@ -28,7 +28,8 @@ Om flera i korgen går bara en ta bort, annars läggs andra till???
 
 
 CART 
-lägg till button med mddelande om att gå vidare i köpet
+lägg till button med meddelande om att gå vidare i köpet
+marginaler på cards
 
 
 // VIKTIGT!!!! //
