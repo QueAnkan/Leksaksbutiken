@@ -1,4 +1,4 @@
-// Funktion som kontrollerar om användarnamn uppfyller kraven
+
 import { useRecoilState } from "recoil"
 import { uNameAtom, uPassAtom } from "../data/usersAtom"
 
@@ -8,6 +8,8 @@ const users = [
 	'password': 'password',
 }
 ]
+
+// Funktion som kontrollerar om användarnamn uppfyller kraven
 
 function useIsValidName(){
 	const [uName] = useRecoilState(uNameAtom)
@@ -38,16 +40,15 @@ function useIsValidPassword(){
 	return [true, '']
 }
 
+// funktion som kontrollerar att namn och pass matchar lägg in felmeddelande+?!
+
 function useIsMatching(){
 	const [uName] = useRecoilState(uNameAtom)
 	const  [uPass] = useRecoilState(uPassAtom)
 
 
 	const match = users.find(user => user.name===uName && user.password === uPass)
-console.log(match);
-console.log("uName:", uName);
-console.log("uPass:", uPass);
-console.log("users:", users);
+
 	if (match !== undefined ){
 	return true
 } else {

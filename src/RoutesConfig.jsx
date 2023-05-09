@@ -14,70 +14,72 @@ import ErrorPage from "./routes/ErrorPage";
 
 const router = createHashRouter ([
 
-{
-	path: '/',
-	element: <Root/>,
- 
-		 children:[
+	{
+		path: '/',
+		element: <Root/>,
+	
+			children:[
 
-			{
-				path: '/',
-				element: <Home/> ,
-			},
+				{
+					path: '/',
+					element: <Home/> ,
+				},
 
-			{
-				path: 'products' ,
-				element: <Products/>,
-				loader: productsLoader,
+				{
+					path: 'products' ,
+					element: <Products/>,
+					loader: productsLoader,
 
-			},
+				},
 
-			{
-				path:'/products/:id',
-				element:<ProductDetails/>,
-				loader: productsLoader,
-			},
+				{
+					path:'/products/:id',
+					element:<ProductDetails/>,
+					loader: productsLoader,
+				},
 
-			{
-				path: 'search',
-				element: <Search/>,
-				loader: searchLoader,
-			},
+				{
+					path: 'search',
+					element: <Search/>,
+					loader: searchLoader,
+				},
 
-			{
-				path: 'cart',
-				element: <Cart/>
-			},
+				{
+					path: 'cart',
+					element: <Cart/>
+				},
 
-			{
-				path: 'login',
-				element: <LogIn/>,
-			},
+				{
+					path: 'login',
+					element: <LogIn/>,
+				},
 
-			{
-				path: 'admin-start',
-				element: <AdminStart/>,
-			},
+				{
+					path: 'admin',
+					element: <AdminStart/>,
 
-			{
-				path: 'admin-products',
-				element: <AdminProducts/>,
-			},
-			{
-				path: 'admin-handle-users',
-				element: <AdminHandleUsers/>,
-			},
+					children:[
+						{
+							path: 'admin-products',
+							element: <AdminProducts/>,
+			
+						},
+						{
+							path: 'admin-handle-users',
+							element: <AdminHandleUsers/>,
+						},
 
+						
+					]
+				},
 
-		 ],
-		 
-			errorElement: <ErrorPage/>
-		 
-
-}
-
+				
 
 
+			],
+			
+				errorElement: <ErrorPage/>
+	}
 
 ])
 

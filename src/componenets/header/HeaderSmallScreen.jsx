@@ -12,10 +12,9 @@ const HeaderSmallScreen = () => {
 
 		<NavLink to=''> <h1>Lek och bad </h1> </NavLink>
 		<nav>
-			<NavLink to='search' > <FiSearch className="ikon"/></NavLink>
-			<NavLink to='cart'><FiShoppingCart className="ikon"/></NavLink>
-				{/* <MainMenu/> */}
-				<FaBars/>
+				<NavLink to= 'products'> Vårt sortiment</NavLink>
+				<NavLink to='search' > <FiSearch className="icon"/> Sök</NavLink>
+			<NavLink to='cart'><FiShoppingCart className="icon"/>Varukorg</NavLink>
 		</nav>
 	</header>
 	)

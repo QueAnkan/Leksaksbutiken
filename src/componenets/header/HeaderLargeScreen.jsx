@@ -13,9 +13,9 @@ const HeaderLargeScreen = () => {
 			<nav>
 				
 					<NavLink to='products'> Vårt sortiment</NavLink>
-					<NavLink to='search' className='ikon' > <FiSearch className="ikon"/> </NavLink>
+					<NavLink to='search' className='icon' > <FiSearch className="ikon"/> </NavLink>
 					<NavLink to='search'  >  Sök produkt</NavLink>
-					<NavLink to='cart' className='ikon'> <FiShoppingCart className="ikon"/></NavLink>
+					<NavLink to='cart' className='icon'> <FiShoppingCart className="ikon"/></NavLink>
 					<NavLink to='cart'>Varukorg</NavLink>
 			</nav>
 		</header>

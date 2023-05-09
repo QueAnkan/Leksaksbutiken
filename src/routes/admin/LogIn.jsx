@@ -5,6 +5,7 @@ import { useIsMatching } from "../../componenets/validation"
 import { Navigate } from "react-router-dom"
 import { useRecoilState } from "recoil"
 import { uNameAtom, uPassAtom } from "../../data/usersAtom"
+import './Admin.css'
 
 
 
@@ -24,7 +25,7 @@ const handleSubmit = (event) => {
   };
 
   if (shouldNavigate) {
-    return <Navigate to="/admin-start" />;
+    return <Navigate to="/admin" />;
   }
 
 	return(
@@ -32,8 +33,8 @@ const handleSubmit = (event) => {
 		<div className="login-container">
 			<h2>Logga in</h2>
 			<form action="#">
-				<div><NameInput/></div>
-				<div><PassInput/></div>
+				<NameInput/>
+				<PassInput/>
 				<button type="submit" onClick={handleSubmit}>{" "} logga in{" "} </button>
 			</form>
 

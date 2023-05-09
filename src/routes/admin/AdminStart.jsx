@@ -1,15 +1,21 @@
-import { NavLink } from "react-router-dom"
+import { Link, Outlet } from "react-router-dom"
 
 
 
 const AdminStart = () => {
 
 	return (
-		<div>
+		<section className="admin-start">
 			<h2>Vad vill du göra?</h2>
-			<NavLink to= 'admin-products'> Lägg till / ändra produkt</NavLink>
-			<NavLink to= 'admin-handle-users' > Lägg till ny användare </NavLink>
-		</div>
+			<div  className='admin-links'>
+			<Link to= 'admin-products'> Lägg till / ändra produkt</Link>
+			
+			<Link to= 'admin-handle-users' > Lägg till ny användare </Link>
+			</div>
+		<Outlet/>
+
+		</section>
+
 	)
 }
 

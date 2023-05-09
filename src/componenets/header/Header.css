@@ -3,12 +3,12 @@
 
 header{
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
 	position:fixed;
 	width: 100%;
-	height: 5em;
+	height: 7em;
 	color: var(--headerText);
 	background-color: var(--headerBackground);
 }
@@ -19,30 +19,28 @@ header > :first-child{
 
 header h1 {
 	font-family: 'Carattere', cursive; ;
-	margin: 0 0.7em;
-	color: var(--headerText)
+	margin: 0.2em 0.7em;
+	font-size: 50px;
+	color: var(--headerText);
+	
 }
 
-
 header nav {
-	margin: 0 0.7em;
+	margin: 0.2em 0.7em;
 }
 
 header nav a {
 	color: var(--headerText);
+	padding: 0.6em;
 	transition: 0.3s;
-	
 }
 
 header nav a:hover{
 	transform: scale(1.2);
 }
 
-
-
-
-header h1  {
-	text-decoration:none;
+.icon{
+	margin-right: 0.1em;
 }
 
 .header-small{
@@ -71,8 +69,21 @@ header h1  {
 		display: flex;
 	}
 
+	
+header{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	position: fixed;
+	width: 100%;
+	height: 5em;
+	color: var(--headerText);
+	background-color: var(--headerBackground);
+}
+
 	header h1 {
-		margin: 0 2em;
+		margin: 0 0.5em;
 	}
 
 	header nav {
@@ -103,9 +114,21 @@ header h1  {
 		display: flex;
 	}
 
+	header{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		position: fixed;
+		width: 100%;
+		height: 5em;
+		color: var(--headerText);
+		background-color: var(--headerBackground);
+	}
+	
+
 	header h1 {
-		margin: 0 2em;
-		font-size: 50px;
+		margin: 0 .5em;
 	}
 
 

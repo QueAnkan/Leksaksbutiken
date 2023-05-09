@@ -1,8 +1,5 @@
 PRODUCTS.CSS
 
-
-bilderna?
-
 PRODUCTS 
 
 
@@ -10,14 +7,15 @@ SEARCH
 sortera produkter
 
 HEADER
-Marginaler mellan ikoner och länkar , justera så det syns vad som hör ihop med vad
+
 
 
 LOGIN
 fixa css
 validering
-onChange
-onClick
+
+ändra text till logga ut?
+
 
 
 VIEWPRODUCTS 
@@ -33,6 +31,8 @@ marginaler på cards
 
 
 // VIKTIGT!!!! //
-Lägga till admin-sidorna
+
+
+
 API
 

@@ -20,7 +20,7 @@ function handleOnChangePass(event) {
 	return(
 
 		<div>
-			<div className="pass-container">
+			<div className="login-pass-container">
 				<label htmlFor="password"> Password </label>
 					<input 
 					value={uPass}

@@ -7,7 +7,7 @@ import { uNameAtom } from "../data/usersAtom"
 const NameInput = () => {
 const [uName, setUName] = useRecoilState(uNameAtom)
 
-	// const [uName, setUName] = useState('')
+// kod för validering, fyll på med css
 	const [nameIsDirty, setNameIsDirty] =useState(false)
 
 	const [nameIsValid, nameErrorMessage] = useIsValidName(uName)
@@ -21,7 +21,7 @@ const [uName, setUName] = useRecoilState(uNameAtom)
 	return(
 
 		<div>
-			<div className="name-container">
+			<div className="login-name-container">
 				<label htmlFor="username"> Namn </label>
 				<input 
 					value = {uName}

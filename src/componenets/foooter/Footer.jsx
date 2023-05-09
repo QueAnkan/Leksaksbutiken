@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import './Footer.css'
 import {FiLogIn} from 'react-icons/fi'
+import { FaFacebook, FaInstagram } from 'react-icons/fa'
 
 const Footer = () => {
 
@@ -21,11 +22,11 @@ const Footer = () => {
 					tel. 073-9239230<br/>
 					info@lekochbad.se<br/>
 				</p>
-				{/*  soc- ikoner ska in här nedan */}
-			<div> ikon ikon</div>
+				
+			<div> <FaFacebook/> <FaInstagram/></div>
 			</section>
 			{/* ev andra ikoner in här */}
-  			<div> företagsikoner </div>
+  			
 			<NavLink to='login' >  Admin <FiLogIn/> </NavLink>
 		</footer>
 	)
