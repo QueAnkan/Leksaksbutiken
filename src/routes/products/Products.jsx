@@ -1,18 +1,15 @@
 import {useLoaderData} from 'react-router-dom'
-import { data } from '../../data/toys'
+// import { data } from '../../data/toys'
 import ViewProducts from '../../componenets/ViewProducts'
-// import { getProducts } from '../../utils/getProducts'
 import './Products.css'
+import { getProducts } from '../../utils/getProducts.js'
 
-export const loader = () => data
+export const loader = () => getProducts()
 
-// const handleGetProducts = async(name) =>{
-// const success = await getProducts(name)
-// }
 
 function Products() {
 	const products = useLoaderData()
-	// handleGetProducts()
+	
 	return (
 
 		<div className='products-container'>

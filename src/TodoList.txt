@@ -11,7 +11,6 @@ HEADER
 
 
 LOGIN
-fixa css
 validering
 
 ändra text till logga ut?

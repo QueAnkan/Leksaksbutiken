@@ -1,5 +1,5 @@
-import { data } from "../data/toys";
-import {url ,shopId} from './constants.js'
+import { data } from "../data/toys.js";
+import {url, shopId} from './constants.js'
 
 async function addProduct(oneProduct) {
 	console.log('adding product');
@@ -19,16 +19,28 @@ async function addProduct(oneProduct) {
 	return false
 }
 
-/* async function addAllProducts() {
-	let products = data
+async function addAllProducts() {
+	
+	
+	let products = data.map(product => ({
+		action: 'add-product',
+		picture: product.picture,
+		name: product.name,
+		description: product.description,
+		price: product.price,
+		shopid: shopId,
+	}))
+
+
+
 
 	products.forEach(product => {
 		addProduct(product)
 	})
 }
 
-addAllProducts() */
+ addAllProducts()
 
-export default addProduct
+/* export default addProduct */
 
 

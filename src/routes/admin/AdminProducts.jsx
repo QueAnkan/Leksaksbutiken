@@ -1,43 +1,56 @@
-import addProduct from "../../utils/addProducts"
+// import addProduct from "../../utils/addProducts"
+import { useState } from "react"
 
 const AdminProducts = () => {
+
+	const [picture, setPicture] = useState('')
+	const [name, setName] = useState('')
+	const [description, setDescription] = useState('')
+	const [price, setPrice] = useState('')
+	const [shopid, setShopid] = useState('')
+
 	
 const handleSubmit = ( )=> {
-	addProduct()
+	/* addProduct(picture, name, description, price, shopid ) */
 }
 
 	return(
 		<div >
-			<form action=""
+			<form action="#"
 			className="add-product-form">
-				<label htmlFor="picture-url">Bild-url</label>
+				<label htmlFor="picture">Bild-url</label>
 				<input type="text"
-				id = 'picture-url'
-				// value={product.picture} 
+				id = 'picture'
+				value={picture} 
+				onChange={e => setPicture(e.target.value)}
 				/>
 
 				<label htmlFor="name">Namn</label>
 				<input type="text"
 				id = 'name'
-				// value = {product.name} 
+				value = {name} 
+				onChange={e => setName(e.target.value)}
 				/>
 
 				<label htmlFor="description">Beskrivning</label>
 				<input type="text" 
 				id='description'
-				// value = {product.description}
+				value = {description}
+				onChange={e => setDescription(e.target.value)}
 				/>
 
 				<label htmlFor="price">Pris</label>
 				<input type="text"
 				id = 'price'
-				// value = {product.price} 
+				value = {price} 
+				onChange={e => setPrice(e.target.value)}
 				/>
 
-				<label htmlFor="shop-id">Butiks-id</label>
+				<label htmlFor="shopid">Butiks-id</label>
 				<input type="text"
-				id = 'shop-id'
-				// value = {product.shopid} 
+				id = 'shopid'
+				value = {shopid} 
+				onChange={e => setShopid(e.target.value)}
 				/>
 
 				<button onClick={handleSubmit}> Lägg till ny vara </button>

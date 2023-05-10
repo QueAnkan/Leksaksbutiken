@@ -1,10 +1,11 @@
 import { useState } from "react"
 import { useLoaderData } from "react-router-dom"
-import { data } from '../../data/toys'
+// import { data } from '../../data/toys'
 import ViewProducts from "../../componenets/ViewProducts"
 import './search.css'
+import { getProducts } from "../../utils/getProducts"
 
-export const loader = () => data
+export const loader = () => getProducts()
 
 
 const Search = () => {
