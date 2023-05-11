@@ -7,7 +7,7 @@ import Search, {loader as searchLoader} from "./routes/search/Search";
 import Cart from "./routes/cart/Cart";
 import LogIn from "./routes/admin/LogIn";
 import AdminStart from "./routes/admin/AdminStart";
-import AdminProducts from "./routes/admin/AdminProducts";
+import AdminProducts, {loader as adminLoader} from "./routes/admin/AdminProducts";
 import AdminHandleUsers from "./routes/admin/AdminHandleUsers";
 import ErrorPage from "./routes/ErrorPage";
 
@@ -62,7 +62,7 @@ const router = createHashRouter ([
 						{
 							path: 'admin-products',
 							element: <AdminProducts/>,
-			
+							loader:adminLoader,
 						},
 						{
 							path: 'admin-handle-users',

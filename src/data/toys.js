@@ -185,3 +185,12 @@ export const data =
 	}
 
 	] */
+
+
+// extra testdata:
+
+	/* picture:https://img.freepik.com/free-psd/scuba-diving-elements-mockup_1310-648.jpg?size=626&ext=jpg&ga=GA1.2.1027157510.1664794963&semt=ais,
+
+name: 'Snorkelset, multifärgat',
+description: 'Ett komplett snorkelset med flerfärgad mask och snorkel. Perfekt för att utforska undervattensvärlden.',
+price: 349, */

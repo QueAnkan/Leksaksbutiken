@@ -14,7 +14,7 @@ const [uName, setUName] = useRecoilState(uNameAtom)
 	const nameFieldValidation = nameIsDirty ? (nameIsValid? 'valid' : 'invalid') : ''
 	const visibleNameError = nameIsDirty ? (!nameIsValid? 'visible' : '') : ''
 
-	function handdleOnchangeName(event) {
+	function handleOnchangeName(event) {
 		setUName(event.target.value)
 	}
 
@@ -28,7 +28,7 @@ const [uName, setUName] = useRecoilState(uNameAtom)
 					className={nameFieldValidation}
 					id="username" 
 					type="text" 
-					onChange={handdleOnchangeName} 
+					onChange={handleOnchangeName} 
 					onBlur={() => setNameIsDirty(true)}
 					required/>
 				
