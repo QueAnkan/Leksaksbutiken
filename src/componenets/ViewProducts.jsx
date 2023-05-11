@@ -18,6 +18,7 @@ const ViewProducts = ({product, view}) => {
 			picture: product.picture,
 			name: product.name,
 			price: product.price,
+			itemtotal: product.price, 
 		}
 
 		let itemExist = cart.find(item => item.id === cartItem.id)
@@ -27,7 +28,8 @@ const ViewProducts = ({product, view}) => {
 				if(item.id === cartItem.id) {
 					return{
 						...item, 
-						amount: item.amount + 1
+						amount: item.amount + 1,
+						itemtotal: (2*item.price ) * item.amount 
 					}
 					} else{
 						return item
@@ -44,18 +46,19 @@ const ViewProducts = ({product, view}) => {
 	const removeFromCart = () => {
 		let newCart = cart.map((item) => {
 			if (item.id === product.id) {
-				return { ...item, amount: item.amount - 1 };
-			} else {
-				return item;
-			}
+				return { 
+					...item, 
+					amount: item.amount - 1,
+					itemtotal: item.itemtotal-item.price,
+				};
+				} else {
+					return item;
+				}
 		});
 	newCart = newCart.filter((item) => item.amount > 0)
 
 		setCart(newCart)
 	}
-
-	
-	//  i funktion att ta bort. Se till att det går att ta bort en i taget
 
 		return (
 			
@@ -68,7 +71,11 @@ const ViewProducts = ({product, view}) => {
 					<span><Link to={'/products/' + product.id}>Mer info</Link></span>
 					<p>{product.price}:-</p>
 					<div className='amount'>{isAdded ? 'Tillagd' : ''}</div>
-					<p className='amount' >{product.amount}</p>
+					
+					{ view === 'cart' ?<div className='item-total'>
+					<p>{product.amount} st</p>
+					<p> {product.itemtotal} :-</p>
+					</div> : null }
 					{view !== 'cart' ?
 					<button onClick={() => addToCart(product)}>Lägg till</button> :
 					<button onClick={() => removeFromCart(product)}> <HiOutlineTrash/> </button>
@@ -83,4 +90,4 @@ export default ViewProducts
 
 ///todo lägg till meddelande att tillagd i onClick {isAdded ? meddelande : ''}
 
-// Lägg till länk på cards för att se mer info
+

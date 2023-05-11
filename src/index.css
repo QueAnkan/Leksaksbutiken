@@ -37,7 +37,7 @@ main{
 	align-items: center;
 	flex-grow: 1;
 	max-width: 1024px;
-	margin: 5em auto 0 auto;
+	margin: 7em auto 0 auto;
 	width: 90%;
 }
 
@@ -66,11 +66,16 @@ button:hover{
 
 /* laptop, small screens */
 @media (min-width:769px) and (max-width:1024px){
+	main{
+		margin-top: 5em;
+	}
 }
 
 
 /* desktop, larger screens */
 @media (min-width:1025px){
-	
+	main{
+		margin-top: 5em;
+	}
 
 }

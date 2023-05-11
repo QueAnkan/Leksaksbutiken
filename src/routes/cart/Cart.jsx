@@ -8,7 +8,13 @@ const Cart = () => {
 
 	const [cart] = useRecoilState(cartAtom)
 	
+console.log(cart);
 
+const sum = cart.reduce((accumulator, item) =>{
+	return accumulator + item.itemtotal;
+}, 0)
+
+console.log(sum);
 
 	return(
 		<div className="cart-products-container">
@@ -20,7 +26,7 @@ const Cart = () => {
 			</ul>
 			<div className="total">
 			<p>Totalt belopp:</p>
-			<p>0 :-</p>
+			<p>{sum }:-</p>
 			</div>
 			<button type="button"> Till betalning</button>
 		</div>
