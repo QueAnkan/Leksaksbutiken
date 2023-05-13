@@ -31,7 +31,7 @@ header nav {
 
 header nav a {
 	color: var(--headerText);
-	padding: 0.4em;
+	padding-left: 0;
 	transition: 0.3s;
 }
 
@@ -41,6 +41,9 @@ header nav a:hover{
 
 .icon{
 	margin-right: 0.1em;
+	margin-left: 1em;
+	text-decoration: none;
+	padding-right: 0;
 }
 
 .header-small{

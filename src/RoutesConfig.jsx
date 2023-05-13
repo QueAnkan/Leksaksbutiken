@@ -60,12 +60,12 @@ const router = createHashRouter ([
 
 					children:[
 						{
-							path: 'admin-products',
+							path: 'products',
 							element: <AdminProducts/>,
 							loader:adminLoader,
 						},
 						{
-							path: 'admin-handle-users',
+							path: 'users',
 							element: <AdminHandleUsers/>,
 						},
 
