@@ -17,8 +17,6 @@ function Products() {
 			<ul>
 				{products.map(product => (
 					<ViewProducts key={product.id}  product = {product} view='products'/>
-
-
 				))}
 			</ul>
 		</div>

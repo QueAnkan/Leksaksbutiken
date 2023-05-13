@@ -2,39 +2,41 @@
 /* css för login-sidan */
 
 
-.login-container h2 {
-	margin-top: 2em;
-}
 
 .login-container form{
 	display: flex;
 	flex-direction: column;
-}
-
-.login-container form :first-child{
-	margin-top: 1rem;
+	margin: 2em auto 1em;
+	padding: 3em;
+	border: 1px solid lightgrey;
+	border-radius: 0.5em;
+	background-color: var(--background);
 
 }
 
 .login-name-container {
 	display: flex;
 	flex-direction: column;
+	margin-top: 1rem;
 }
 
-.login-pass-container{
+.login-pass-container {
 	display: flex;
 	flex-direction: column;
+	margin-top: 1rem;
 }
 
-/* .login-container form input{
-	margin-bottom: 3em;
-	
-} */
 
 .login-container button {
 	max-width: fit-content;
 	align-self: center;
 	margin-top: 2em;
+}
+
+.error-message{
+	height:2em;
+	width: 15em;
+	margin-bottom: 1em;
 }
 
 /* css för startsidan */
@@ -61,11 +63,112 @@
 .add-product-form{
 	display: flex;
 	flex-direction: column;
-	margin-top: 2em;
-	max-width: 15em;
+	max-width: 25em;
+	margin: 2em auto 1em;
+	padding: 1em;
+	border: 1px solid lightgrey;
+	border-radius: 0.5em;
+	background-color: var(--background);
+}
 
+.add-product-form h3{
+	margin-bottom: 1em;
 }
 
 .add-product-form input {
 	margin-bottom: 2em;
+	width: 25em;
+}
+
+.add-product-form textarea{
+	resize: none;
+}
+
+.error-message-container{
+	height: 3.3em;
+	margin-bottom: 1.5em;
+}
+
+.visible{
+	border: 1px solid red;
+	height: 3.3em;
+	margin-bottom: 1.5em;
+	padding:0.3em;
+	background-color: rgb(252, 206, 206);
+}
+
+.add-product-form button {
+	width: fit-content;
+	align-self: flex-end;
+}
+
+.admin-products {
+	display: grid;
+	grid-template-columns: repeat;
+	grid-template-rows: auto;
+	width: 100%;
+	row-gap: 1.8em;
+	margin-bottom: 2em;
+}
+
+.admin-products ul{
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+	width: 100%;
+	row-gap: 1.8em;
+	column-gap: 0.8em;
+	margin-bottom: 2em;
+}
+
+
+
+.admin-products li {
+	list-style-type: none;
+}
+
+
+
+/* tablet */
+@media screen and (min-width:481px) and (max-width:768px){
+
+
+	.admin-products ul{
+		display: grid;
+		grid-template-columns: 1fr 1fr ;
+		grid-template-rows: auto;
+		width: 100%;
+		row-gap: 1.8em;
+		column-gap: 0.8em;
+		margin-bottom: 2em;
+	}
+}
+
+
+/* laptop, small screens */
+@media screen and (min-width:769px) and (max-width:1024px){
+
+
+	.admin-products ul{
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: auto;
+		width: 100%;
+		gap: 1.8em;
+		margin-bottom: 2em;
+	}
+	}
+
+	/* desktop, larger screens */
+@media screen and (min-width:1025px){
+
+	.admin-products ul{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: auto;
+	width: 100%;
+	gap: 1.8em;
+	margin-bottom: 2em;
+	}
+
 }

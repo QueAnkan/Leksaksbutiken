@@ -4,7 +4,7 @@ PRODUCTS
 
 
 SEARCH 
-sortera produkter
+sortera produkter?
 
 HEADER
 
@@ -18,7 +18,7 @@ validering
 
 
 VIEWPRODUCTS 
-meddelande om tillagd i cart
+meddelande om tillagd i cart?
 
 
 
@@ -31,9 +31,8 @@ CSS på cards och totalbelopp
 // VIKTIGT!!!! //
 
 ADMIN 
+validering av formulär
 
-css på cards
-kunna ta bort vara
 
 API
 

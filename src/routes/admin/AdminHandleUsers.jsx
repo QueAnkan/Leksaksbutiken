@@ -4,7 +4,7 @@
 const AdminHandleUsers = () => {
 
 	return(
-		<div>Här ska man kunna lägga till användare sen</div>
+		<div> Under konstruktion.... Här ska man kunna lägga till användare sen.</div>
 	)
 }
 

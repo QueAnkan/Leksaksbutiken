@@ -9,6 +9,6 @@ async function getProducts() {
 	return data
 }
 
-getProducts()
+
 
 export {getProducts}

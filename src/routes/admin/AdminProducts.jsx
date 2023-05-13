@@ -14,49 +14,84 @@ const AdminProducts = () => {
 	const [name, setName] = useState('')
 	const [description, setDescription] = useState('')
 	const [price, setPrice] = useState('')
-	
+ 	const [formIsDirty, setFormIsDirty] = useState(false)
+
+	 const visibleFormError = formIsDirty ?  'Vänligen fyll i samtliga fält för att skicka in formuläret.' : ''
+	 const VisibleFormErrorCss = formIsDirty ? 'visible' : 'error-message-container'
+
 	const products = useLoaderData()
 console.log(products);
 	
+const handleOnBlur = () => {
+	
+	if (picture.trim().length > 0 &&
+		name.trim().length > 0 &&
+		description.trim().length > 0 &&
+		price.trim().length > 0 
+		){
+		console.log('input is not emty');
+		return false
+	}else {console.log(' is emty'); setFormIsDirty(true)
+return true}
+} 
+
+
+
 const handleSubmit = ( )=> {
 	event.preventDefault();
+	if(!handleOnBlur){
 	addProduct(picture, name, description, price)
+	}
 }
 
 	return(
-		<div >
-			<form
-			className="add-product-form">
+		<div className='admin-products' >
+			
+			<form 
+				className="add-product-form">
+				<h3>Lägg till en ny vara i vårt sortiment</h3>
 				<label htmlFor="picture">Bild-url</label>
-				<input type="text"
-				id = 'picture'
-					value={picture} 
-				onChange={e => setPicture(e.target.value)}
-				required
+				<input 	type="text"
+						id = 'picture'
+						value={picture} 
+						onChange={e => setPicture(e.target.value)}
+						onBlur ={handleOnBlur}
+						required
 				/>
 				<label htmlFor="name">Namn</label>
-				<input type="text"
-				id = 'name'
-				value = {name} 
-				onChange={e => setName(e.target.value)}
-				required
+				<input 	type="text"
+						id = 'name'
+						value = {name} 
+						onChange={e => setName(e.target.value)}
+						onBlur ={handleOnBlur}
+						required
 				/>
+				<div></div>
 				<label htmlFor="description">Beskrivning</label>
-				<input type="text" 
-				id='description'
-				value = {description}
-				onChange={e => setDescription(e.target.value)}
-				required
+				<textarea  	rows={10}
+							id='description'
+							value = {description}
+							onChange={e => setDescription(e.target.value)}
+							onBlur ={handleOnBlur}
+							required
 				/>
 				<label htmlFor="price">Pris</label>
-				<input type="text"
-				id = 'price'
-				value = {price} 
-				onChange={e => setPrice(e.target.value)}
-				required
+				<input 	type="number"
+						min='1'
+						max='1000'
+						maxLength='4'
+						id = 'price'
+						value = {price} 
+						onChange={e => setPrice(e.target.value)}
+						onBlur ={handleOnBlur}
+						required
 				/>
-				<button onClick={handleSubmit}> Lägg till ny vara </button>
+				<div className={VisibleFormErrorCss} >
+				{formIsDirty ? visibleFormError : ''}
+				</div>
+				<button onClick={handleSubmit} > Lägg till ny vara </button>
 			</form>
+			<h3>Klicka för att ta bort vara ur vårt sortiment:</h3>
 			<ul>
 				{products.map(product => (
 					<ViewProducts key={product.id}  product = {product} view='admin-products'/>
@@ -68,6 +103,3 @@ const handleSubmit = ( )=> {
 
 
 export default AdminProducts
-
-
-{ /* funktion att lägga in på knappen disabled = {!formIsValid} */}

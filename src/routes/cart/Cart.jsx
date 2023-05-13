@@ -28,7 +28,7 @@ console.log(sum);
 			<p>Totalt belopp:</p>
 			<p>{sum }:-</p>
 			</div>
-			<button type="button"> Till betalning</button>
+			<button className="buy-button" type="button"> Till betalning</button>
 		</div>
 	)
 

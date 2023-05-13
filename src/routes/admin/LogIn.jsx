@@ -10,18 +10,25 @@ import './Admin.css'
 
 
 const LogIn = () => {
-const [uName] = useRecoilState(uNameAtom)
-const  [uPass] = useRecoilState(uPassAtom)
+const [uName, setUname] = useRecoilState(uNameAtom)
+const  [uPass, setUPass] = useRecoilState(uPassAtom)
 const [shouldNavigate, setShouldNavigate] =useState(false)
+const [formIsDirty, setFormIsDirty] = useState(false)
 
 const isMatching = useIsMatching()
 
+const matchErrorMessage = formIsDirty? 'Vänligen kontrollera användarnamn och lösenord' : ''
 
 const handleSubmit = (event) => {
     event.preventDefault();
     if (isMatching) {
       setShouldNavigate(true);
-    }
+	  setUname('')
+	  setUPass('')
+
+    } else {
+		setFormIsDirty(true)
+	}
   };
 
   if (shouldNavigate) {
@@ -31,11 +38,13 @@ const handleSubmit = (event) => {
 	return(
 
 		<div className="login-container">
-			<h2>Logga in</h2>
+			
 			<form action="#">
+				<h2>Logga in</h2>
 				<NameInput/>
 				<PassInput/>
-				<button type="submit" onClick={handleSubmit}>{" "} logga in{" "} </button>
+				<div className="error-message">{formIsDirty ? matchErrorMessage : ''}</div>
+				<button type="submit" onClick={handleSubmit}> logga in </button>
 			</form>
 
 			

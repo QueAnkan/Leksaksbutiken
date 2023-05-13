@@ -5,13 +5,40 @@ import { cartAtom } from "../../data/cartAtom"
 
 const ProductDetails = () => {
 	const [cart, setCart] = useRecoilState(cartAtom)
-	const [isAdded, setIsAdded] = useState(false)
+	
 
 	const addToCart = () =>{
-		let newCart = [...cart, product]
+
+		let cartItem = {
+			id: product.id,
+			amount: 1,
+			picture: product.picture,
+			name: product.name,
+			price: product.price,
+			itemtotal: product.price, 
+		}
+
+		let itemExist = cart.find(item => item.id === cartItem.id)
+		if(itemExist) {
+
+			 let newCart = cart.map((item) => {
+				if(item.id === cartItem.id) {
+					return{
+						...item, 
+						amount: item.amount + 1,
+						itemtotal: (2*item.price ) * item.amount 
+					}
+					} else{
+						return item
+					}
+				})
+				setCart(newCart)
+			}
+			else{
+				const newCart = [...cart, cartItem]
 		setCart(newCart)
-		setIsAdded(true)
-	}
+			}
+		}
 	
 	
 const {id} = useParams()
@@ -24,7 +51,7 @@ if(!product) {
 	 return (
 		<div>
 			<p>Produkten verkar inte finnas</p>
-			{/* <p> <Link to='/products' >Återvänd till produktsidan </Link></p> */}
+			{<p> <Link to='/products' >Återvänd till produktsidan </Link></p>}
 		</div>
 	 )
 }
@@ -41,7 +68,6 @@ if(!product) {
 				<article> {product.description}</article>
 
 				<p>{product.price}:-</p>
-				{/* <span>{isAdded ? 'Tillagd i kundkorg!' : ''}</span> */}
 				
 				<button onClick={() => addToCart(product)}>Lägg till</button> 
 				

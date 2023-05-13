@@ -3,6 +3,8 @@ import { useState } from 'react'
 import {Link } from 'react-router-dom'
 import { cartAtom } from '../data/cartAtom'
 import {HiOutlineTrash} from "react-icons/hi"
+import deleteAPIProduct from '../utils/deleteAPIProduct'
+
 
 
 const ViewProducts = ({product, view}) => {
@@ -11,7 +13,6 @@ const ViewProducts = ({product, view}) => {
 
 	const addToCart = () =>{
 
-		// todo komihåg att använda en if-sats så man antingen ändrar ett objekt eller skapar ett helt nytt
 		let cartItem = {
 			id: product.id,
 			amount: 1,
@@ -41,7 +42,7 @@ const ViewProducts = ({product, view}) => {
 				const newCart = [...cart, cartItem]
 		setCart(newCart)
 			}
-			}
+		}
 			
 	const removeFromCart = () => {
 		let newCart = cart.map((item) => {
@@ -56,9 +57,13 @@ const ViewProducts = ({product, view}) => {
 				}
 		});
 	newCart = newCart.filter((item) => item.amount > 0)
-
 		setCart(newCart)
 	}
+
+	const deleteItem =  async (productId) => {
+		await deleteAPIProduct(productId)
+	}
+
 
 		return (
 			
@@ -68,18 +73,26 @@ const ViewProducts = ({product, view}) => {
 						<img src={product.picture} alt={product.name}/>
 						</div>
 					<h3> {product.name} </h3> 
-					<span><Link to={'/products/' + product.id}>Mer info</Link></span>
-					<p>{product.price}:-</p>
+					{view !== 'cart' ? 
+						<span><Link to={'/products/' + product.id}>Mer info</Link></span> :
+						''}
+					{view !== 'cart' ? <p>{product.price}:-</p>: ''}
+					
 					<div className='amount'>{isAdded ? 'Tillagd' : ''}</div>
 					
 					{ view === 'cart' ?<div className='item-total'>
 					<p>{product.amount} st</p>
-					<p> {product.itemtotal} :-</p>
+					<p> á {product.price}:- /styck</p>
+					<p> Summa {product.itemtotal} :-</p>
 					</div> : null }
-					{view !== 'cart' ?
-					<button onClick={() => addToCart(product)}>Lägg till</button> :
-					<button onClick={() => removeFromCart(product)}> <HiOutlineTrash/> </button>
-					}
+		
+					{view === 'cart' ?
+					 <button onClick={() => removeFromCart(product)}> <HiOutlineTrash/> </button>: 	
+					(view === 'admin-products' ?
+					<button onClick ={() => deleteItem(product.id)}>Ta bort vara</button> : 
+					<button onClick={() => addToCart(product)}>Lägg till</button>
+					)}
+					
 				</div>
 			</li>
 			

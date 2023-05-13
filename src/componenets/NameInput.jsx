@@ -7,13 +7,6 @@ import { uNameAtom } from "../data/usersAtom"
 const NameInput = () => {
 const [uName, setUName] = useRecoilState(uNameAtom)
 
-// kod för validering, fyll på med css
-	const [nameIsDirty, setNameIsDirty] =useState(false)
-
-	const [nameIsValid, nameErrorMessage] = useIsValidName(uName)
-	const nameFieldValidation = nameIsDirty ? (nameIsValid? 'valid' : 'invalid') : ''
-	const visibleNameError = nameIsDirty ? (!nameIsValid? 'visible' : '') : ''
-
 	function handleOnchangeName(event) {
 		setUName(event.target.value)
 	}
@@ -25,16 +18,11 @@ const [uName, setUName] = useRecoilState(uNameAtom)
 				<label htmlFor="username"> Namn </label>
 				<input 
 					value = {uName}
-					className={nameFieldValidation}
 					id="username" 
 					type="text" 
 					onChange={handleOnchangeName} 
-					onBlur={() => setNameIsDirty(true)}
-					required/>
-				
-			</div>
-			<div className= 'error-message'> {nameIsDirty ? nameErrorMessage || visibleNameError : ''} </div>
-			
+					required/>			
+			</div>	
 		</div>
 	)
 }
