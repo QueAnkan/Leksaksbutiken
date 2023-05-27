@@ -6,10 +6,10 @@ async function addProduct(picture,name,description,price) {
 const data = {
 
 	action: 'add-product',
-	picture:picture ,
-	name:name ,
-	description:description ,
-	price:price ,
+	picture: picture ,
+	name: name ,
+	description: description ,
+	price: price ,
 	shopid: shopId
 }
 

@@ -20,29 +20,38 @@ const AdminProducts = () => {
 	 const VisibleFormErrorCss = formIsDirty ? 'visible' : 'error-message-container'
 
 	const products = useLoaderData()
-console.log(products);
+// console.log(products);
 	
-const handleOnBlur = () => {
-	
-	if (picture.trim().length > 0 &&
-		name.trim().length > 0 &&
-		description.trim().length > 0 &&
-		price.trim().length > 0 
-		){
-		console.log('input is not emty');
-		return false
-	}else {console.log(' is emty'); setFormIsDirty(true)
-return true}
-} 
+
+	const handleOnBlur = () => {
+		
+		if (picture.trim().length > 0 &&
+			name.trim().length > 0 &&
+			description.trim().length > 0 &&
+			price.trim().length > 0 
+			){
+			console.log('input is not emty');
+			setFormIsDirty(false)
+			return false
+		} else {console.log(' is emty'); setFormIsDirty(true)
+			return true
+		}
+
+		} 
 
 
 
-const handleSubmit = ( )=> {
-	event.preventDefault();
-	if(!handleOnBlur){
-	addProduct(picture, name, description, price)
+	const handleSubmit = async (event)=> {
+		event.preventDefault();
+		if(!setFormIsDirty()){
+			try {console.log('Produkten tillagd');
+			await addProduct(picture, name, description, price)
+			} catch (error) {
+				console.log('Något gick fel');
+			}
+		
+		}
 	}
-}
 
 	return(
 		<div className='admin-products' >
@@ -88,9 +97,11 @@ const handleSubmit = ( )=> {
 				/>
 				<div className={VisibleFormErrorCss} >
 				{formIsDirty ? visibleFormError : ''}
-				</div>
-				<button onClick={handleSubmit} > Lägg till ny vara </button>
+				</div>	
+				<button type='submit' onClick={handleSubmit} > Lägg till ny vara </button>
 			</form>
+			
+			
 			<h3>Klicka för att ta bort vara ur vårt sortiment:</h3>
 			<ul>
 				{products.map(product => (
