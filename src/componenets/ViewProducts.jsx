@@ -1,15 +1,19 @@
 import { useRecoilState } from 'recoil'
+import {useLoaderData} from 'react-router-dom'
+import { getProducts } from '../utils/getProducts'
 import { useState } from 'react'
 import {Link } from 'react-router-dom'
 import { cartAtom } from '../data/cartAtom'
 import {HiOutlineTrash} from "react-icons/hi"
 import deleteAPIProduct from '../utils/deleteAPIProduct'
 
-
+export const loader = () => getProducts()
 
 const ViewProducts = ({product, view}) => {
 	let [cart, setCart] = useRecoilState(cartAtom)
 	const [isAdded, setIsAdded] = useState(false)
+const allProducts = useLoaderData()
+const  [products, setProducts] = useState(product)
 
 	const addToCart = () =>{
 
@@ -62,6 +66,8 @@ const ViewProducts = ({product, view}) => {
 
 	const deleteItem =  async (productId) => {
 		await deleteAPIProduct(productId)
+		const updatedProducts = await getProducts()
+			setProducts(updatedProducts)
 	}
 
 

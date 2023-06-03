@@ -10,7 +10,7 @@
 	padding: 3em;
 	border: 1px solid lightgrey;
 	border-radius: 0.5em;
-	background-color: var(--background);
+	background-color: var(--headerBackground);
 
 }
 
@@ -34,7 +34,7 @@
 }
 
 .error-message{
-	height:2em;
+	height:3em;
 	width: 15em;
 	margin-bottom: 1em;
 }
@@ -65,7 +65,7 @@
 	flex-direction: column;
 	max-width: 25em;
 	margin: 2em auto 1em;
-	padding: 1em;
+	padding: 1.5em;
 	border: 1px solid lightgrey;
 	border-radius: 0.5em;
 	background-color: var(--background);
@@ -75,32 +75,65 @@
 	margin-bottom: 1em;
 }
 
-.add-product-form input {
-	margin-bottom: 2em;
-	width: 25em;
+.input-container {
+	display:flex;
+	flex-direction: column;
+	width: 20em;
 }
 
-.add-product-form textarea{
+.input-container > input{
+	height: 2em;
+}
+
+.description-container textarea{
 	resize: none;
 }
 
-.error-message-container{
-	height: 3.3em;
-	margin-bottom: 1.5em;
+.description-container{
+	display: flex;
+	flex-direction: column;
 }
 
-.visible{
-	border: 1px solid red;
-	height: 3.3em;
-	margin-bottom: 1.5em;
+.visible {
+	border: 1px solid rgb(190, 30, 30);
+	background-color: rgb(248, 232, 232);
+}
+
+.valid {
+	background-color: blueviolet;
+}
+
+.error-message{
+	height: 3em;
+	font-size: 14px;
+	margin-bottom: 1em;
+	width: 20em;
+}
+
+.emty-field-error{
+	height: 4em;
+	width: 20em;
+	font-size: 14px;
+	margin-bottom: 2em;
 	padding:0.3em;
-	background-color: rgb(252, 206, 206);
+	border: 1px solid rgb(190, 30, 30);
+	background-color: rgb(248, 232, 232);
+}
+
+.fields-valid {
+	height: 4em;
+	width: 20em;
+	font-size: 14px;
+	margin-bottom: 2em;
+	padding:0.3em;
 }
 
 .add-product-form button {
 	width: fit-content;
 	align-self: flex-end;
 }
+
+/* produktvy */
 
 .admin-products {
 	display: grid;

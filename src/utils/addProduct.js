@@ -12,7 +12,7 @@ const data = {
 	price: price ,
 	shopid: shopId
 }
-
+console.log(data);
 
 	const options = {
 		method: 'POST',

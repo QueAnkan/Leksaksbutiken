@@ -59,19 +59,63 @@ function useIsMatching(){
 
 
 
-export   {useIsValidName, useIsValidPassword, useIsMatching}
+export   {useIsValidName, useIsValidPassword, useIsMatching, isValidProductName, isValidProductPicture, isValidProductDescription, isValidProductPrice}
 
 
 
 
+function isValidProductName (name) {
+const allowedChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖabcdefghijklmnopqrstuvwxyzåäö1234567890,- '
+const isCharAllowed = (char) => allowedChars.includes(char)
+
+	const isCharValid = Array.from(name).every(isCharAllowed)
+	
+	if (!isCharValid || name.length < 3 ) {
+		return [false, 'Vänligen använd minst 3 bokstäver.']
+	}
+
+	return [true, '']
+}
+
+
+function isValidProductPicture (picture) {
+	const urlRegex = /^(ftp|http|https):\/\/[^ "]+\.(jpg|jpeg|png|gif)(\?[^ "]+)*$/i;
+
+	if (!urlRegex.test(picture)){
+		return [false, 'Vänligen kontrollera att du använder en giltig bildadress.']
+
+	}
+	return [true, '']
+}
+
+function isValidProductDescription (description) {
+
+	const allowedChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖabcdefghijklmnopqrstuvwxyzåäö1234567890,.- '
+const isCharAllowed = (char) => allowedChars.includes(char)
+
+	const isCharValid = Array.from(description).every(isCharAllowed)
+	
+	if (!isCharValid || description.length < 15 || description.length > 120 ) {
+		return [false, 'Vänligen beskriv varan med minst 15 och max 120 ord.']
+	}
+
+	return [true, '']
+}
 
 
 
+function isValidProductPrice (price) {
+	const allowedChars = '1234567890'
+const isCharAllowed = (char) => allowedChars.includes(char)
 
+	const isCharValid = Array.from(price).every(isCharAllowed)
+	
+	if (!isCharValid || price.length < 2 || price.length > 1000) {
+		return [false, 'Vänligen använd minst 2 och max 4 siffror för att ange priset.']
+	}
 
-
-
-
+	return [true, '']
+}
 
 
 
